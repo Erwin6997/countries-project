@@ -3,6 +3,7 @@
     margin: opx;
     box-sizing: border-box;
 }
+
 body {  
     width: 100%;
     height: 100%;
@@ -33,10 +34,12 @@ body {
 }
 #title{
     padding-left: 3cm;
-    padding-top: 1cm;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 #mode{
-    margin-left: 85%;
+    position:initial ;
+    margin-left: 70%;
     padding-bottom: 10px;
 }
 #second-form{
@@ -44,6 +47,7 @@ body {
     color: black;
     background-color: rgb(229, 228, 226);
     border-radius: 1cm;
+
 }
 .form-search{
     margin-left: 3cm;
@@ -52,9 +56,9 @@ body {
 }
 .dropdown-list{
     font-size: 15px;
-    margin-left: 70%;
-    padding-right: 1cm;
-    padding-bottom: 20cm;
+    margin-left: 67%;
+    margin-right: 13%;
+
 }
 .image{
     height: 150px;
@@ -62,27 +66,50 @@ body {
 }
 
 .countries:hover > .image{
-  opacity: 0.3;
+    opacity: 0.3;
 }
-
+.btn{
+    width: 3.5cm;
+    height: 1.2cm;
+    margin-left: -73%;
+    padding: 15px;
+}
+.form2{
+    grid-gap: 3cm;
+    width: auto;
+    height: fit-content;
+    position: inherit;
+    display: contents;
+    justify-content: space-between;
+}
+.big-image{
+    padding-top: 70%;
+    width: 410px;
+    height: 310px;
+}
+.countries-info{
+    padding-left: 45%;
+    margin-left: 3cm;
+    display: inline-grid;
+}
 
 @media only screen and (min-width: 600px) {
     #root {   
-      grid-template-columns: auto auto ;    
+        grid-template-columns: auto auto ;    
     }
-  }
-  @media only screen and (min-width: 900px) {
+}
+@media only screen and (min-width: 900px) {
     #root {    
-      grid-template-columns: auto auto auto ;  
+        grid-template-columns: auto auto auto ;  
     }  
-  }
-  @media only screen and (min-width: 1200px) {
+}
+@media only screen and (min-width: 1200px) {
     #root {    
-      grid-template-columns: auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
     }
-  }
-  @media only screen and (min-width: 1450px) {
+}
+@media only screen and (min-width: 1450px) {
     #root {    
-      grid-template-columns: auto auto auto auto auto auto auto ;    
+        grid-template-columns: auto auto auto auto auto auto auto ;    
     }
-  }
+}

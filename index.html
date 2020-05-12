@@ -4,13 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
         <title>Countries Project | Meisam </title>
+
         <link href="style.css" rel="stylesheet">
     </head>
     <body> 
         <nav id="navbar">
             <div>
                 <h1 id="title">Where in the world?</h1>
-                <p class="mode" id="mode">Dark Mode</p>
+
             </div>
         </nav>
 <!-- search section -->
@@ -18,13 +19,13 @@
             <div>
                 <input type="text" id="searchInput" class="form-search" placeholder="search for a country..." aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <select id="dropdown-list" class="dropdown-list"> 
-                <option class="dropdown-item" href="#"> All</option>
-                <option class="dropdown-item" href="#">Africa</option>
-                <option class="dropdown-item" href="#">America</option>
-                <option class="dropdown-item" href="#">Asia</option>
-                <option class="dropdown-item" href="#">Europe</option>
-                <option class="dropdown-item" href="#">Oceania</option>
+            <select id="dropdowns" class="dropdown-list"> 
+                <option  value="-- All Region --">-- All Region --</option>
+                <option  value="Africa">Africa</option>
+                <option  value="America">America</option>
+                <option  value="Asia">Asia</option>
+                <option  value="Europe">Europe</option>
+                <option  value="Oceania">Oceania</option>
             </select>    
         </form>
 <!-- Button -->
@@ -33,5 +34,7 @@
         </form>
 
         <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+        <script> new Darkmode().showWidget();</script>
     </body>
 </html>
