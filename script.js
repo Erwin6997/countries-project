@@ -1,11 +1,12 @@
 let URLNew = "https://restcountries.eu/rest/v2/all";
 const root = document.getElementById("root");
 const searchC = document.getElementById("searchInput");
+let AllData;
 
 function setup(URL) {
     fetch(URLNew)
         .then((response) => {return response.json();})
-        .then((data) => {select(data);});
+        .then((data) => {AllData = data; select(data);});
 }
 function makePageForCountries(data){
     removersFirstPage();
@@ -108,7 +109,26 @@ function makeCountry(element){
     capital2.innerText = `Top Level Domain : ${element.topLevelDomain}`;
     capital3.innerText = `Time Zones : ${element.timezones}`;
     capital4.innerText = `Currencies : ${element.currencies[0].name}`;
-    nameB.innerText = `Borders with : ${element.borders}`;
+    nameB.innerText = `Borders with :`;
+    if (element.borders.length === 0){nameB.innerHTML+= " The country does Not have any borders"}
+        console.log(element.borders.length);
+    for (let i = 0 ; i < element.borders.length ; i ++){
+        console.log(element.borders[i]);
+        const button = document.createElement("button");
+        button.classList.add("btn2");
+        AllData.forEach((name) => {
+            if (element.borders[i] === name.alpha3Code){
+                button.innerText = `${name.name}`;
+                button.addEventListener(`click` , function(){
+                    removeSecundPage();
+                    makeCountry(name);
+                });
+                console.log(name.name)}
+        });
+        nameB.appendChild(button);
+    }
+    
+
 }
 function search(){
 
