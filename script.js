@@ -10,6 +10,7 @@ function setup(URL) {
 }
 function makePageForCountries(data){
     removersFirstPage();
+    removeSecundPage();
     data.forEach(element => {
             countries = document.createElement("div");
         const imageCountry = document.createElement("img");
@@ -47,7 +48,7 @@ function makeCountry(element){
     bTn.classList.add("btn");
     bTn.type = "Button";
     bTn.innerText = "Back";
-    
+
     bTn.addEventListener(`click` , function(){
         removeSecundPage();
         bTn.style.display = `none`;
@@ -98,7 +99,6 @@ function makeCountry(element){
     countriesD.appendChild(capital2);
     countriesD.appendChild(capital3);
     countriesD.appendChild(capital4);
-
     countriesInfo.appendChild(nameB);
     
     imageCountry.src = element.flag;
@@ -111,9 +111,7 @@ function makeCountry(element){
     capital4.innerText = `Currencies : ${element.currencies[0].name}`;
     nameB.innerText = `Borders with :`;
     if (element.borders.length === 0){nameB.innerHTML+= " The country does Not have any borders"}
-        console.log(element.borders.length);
     for (let i = 0 ; i < element.borders.length ; i ++){
-        console.log(element.borders[i]);
         const button = document.createElement("button");
         button.classList.add("btn2");
         AllData.forEach((name) => {
@@ -123,17 +121,13 @@ function makeCountry(element){
                     removeSecundPage();
                     makeCountry(name);
                 });
-                console.log(name.name)}
+            }
         });
         nameB.appendChild(button);
     }
-    
-
 }
 function search(){
-
     const name = document.querySelectorAll(".countries");
-    console.log(name);
     let lowCase = searchC.value.toLowerCase();
     Array.from(name).forEach((element) => {
         let cCharacter = element.textContent.toLowerCase();
@@ -147,9 +141,9 @@ function search(){
 searchC.addEventListener("input", search);
 
 const dropL = document.getElementById("dropdowns");
-
 function select(data){
     if (dropL.value === "-- All Region --"){
+        removeSecundPage();
         makePageForCountries(data);
     }
     else{
